@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 export default function ProjectSection() {
   const projects = [
     {
@@ -20,19 +22,20 @@ export default function ProjectSection() {
 
   return (
     <section className="py-20 bg-black text-white px-6">
-      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
-        Projects
-      </h2>
+      <Reveal>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
+          Projects
+        </h2>
+      </Reveal>
 
       <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        {projects.map((p) => (
-          <div
-            key={p.title}
-            className="border border-white/10 p-6 rounded-xl hover:bg-white/5 transition"
-          >
-            <h3 className="text-xl font-semibold">{p.title}</h3>
-            <p className="text-gray-400 mt-2">{p.desc}</p>
-          </div>
+        {projects.map((p, index) => (
+          <Reveal key={p.title}>
+            <div className="border border-white/10 p-6 rounded-xl hover:bg-white/5 transition">
+              <h3 className="text-xl font-semibold">{p.title}</h3>
+              <p className="text-gray-400 mt-2">{p.desc}</p>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>

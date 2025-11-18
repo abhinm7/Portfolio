@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 export default function CertificateSection() {
   const certificates = [
     "Google Cloud Fundamentals",
@@ -7,15 +9,19 @@ export default function CertificateSection() {
 
   return (
     <section className="py-20 bg-black text-white px-6">
-      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
-        Certificates
-      </h2>
+      <Reveal>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
+          Certificates
+        </h2>
+      </Reveal>
 
       <div className="max-w-3xl mx-auto space-y-4">
         {certificates.map((c) => (
-          <div key={c} className="border border-white/10 p-4 rounded-xl">
-            <p className="text-gray-300">{c}</p>
-          </div>
+          <Reveal key={c}>
+            <div className="border border-white/10 p-4 rounded-xl">
+              <p className="text-gray-300">{c}</p>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>
