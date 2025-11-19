@@ -7,7 +7,7 @@ export default function SampleQuestions({
 }) {
   return (
     <div className="text-center text-slate-600 space-y-3 text-sm">
-      <p>Start chatting — ask anything about Abhin ✨</p>
+      <p>Lets's chat ✨</p>
 
       <div className="flex flex-wrap justify-center gap-2 mt-2">
         {questions.map((q, i) => (

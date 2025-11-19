@@ -16,12 +16,15 @@ export default function ChatContainer({
   return (
     <div
       className="
-      bg-white/10 backdrop-blur-sm rounded-xl
-      border border-white/20 shadow-lg
-      h-[400px] sm:h-[420px]
-      flex flex-col
-    "
+    bg-white/10 backdrop-blur-sm rounded-xl
+    border border-white/20 shadow-lg
+    h-[400px] sm:h-[420px]
+    flex flex-col
+
+    ring-1 ring-blue-300/30 
+  "
     >
+
       <MessageList
         messages={messages}
         loading={loading}

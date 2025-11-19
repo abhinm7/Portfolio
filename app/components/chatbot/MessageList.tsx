@@ -12,15 +12,24 @@ export default function MessageList({
   sampleQuestions: string[];
   sendMessage: (msg: string) => void;
 }) {
+  const isEmpty = messages.length === 0;
+
   return (
-    <div className="flex-1 p-4 overflow-y-auto space-y-3">
-      {messages.length === 0 && (
-        <SampleQuestions questions={sampleQuestions} sendMessage={sendMessage} />
+    <div
+      className={`
+        flex-1 p-4 overflow-y-auto space-y-3
+        ${isEmpty ? "flex flex-col justify-center items-center" : ""}
+      `}
+    >
+      {isEmpty && (
+        <SampleQuestions
+          questions={sampleQuestions}
+          sendMessage={sendMessage}
+        />
       )}
 
-      {messages.map((msg, i) => (
-        <MessageBubble key={i} msg={msg} />
-      ))}
+      {!isEmpty &&
+        messages.map((msg, i) => <MessageBubble key={i} msg={msg} />)}
 
       {loading && (
         <div className="p-2 rounded-lg text-sm bg-white/20 border border-white/10 w-24">

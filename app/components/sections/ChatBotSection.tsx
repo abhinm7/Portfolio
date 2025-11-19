@@ -9,12 +9,14 @@ export default function ChatBotSection() {
   const [messages, setMessages] = useState<{ from: string; text: string }[]>([]);
   const [loading, setLoading] = useState(false);
 
+  // app/api/chat/sampleQuestions.ts
+
   const sampleQuestions = [
-    "Who is Abhin M?",
-    "What projects has Abhin built?",
-    "What technologies does Abhin use?",
-    "Tell me about Abhin's internships.",
-    "What is Abhin good at?"
+    "Tell me about yourself.",
+    "Tell me about your Social Media Microservices app.",
+    "What is your tech stack?",
+    "Tell me about your Email Aggregator project.",
+    "Why should I hire you?"
   ];
 
   async function sendMessage(text: string) {
