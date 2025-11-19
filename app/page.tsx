@@ -1,3 +1,4 @@
+import ChatBotSection from "./components/sections/ChatBotSection";
 import ContactSection from "./components/sections/ContactSection";
 import EducationSection from "./components/sections/EducationSection";
 import HeaderSection from "./components/sections/HeaderSection";
@@ -11,6 +12,7 @@ export default function Home() {
     <main className="w-full">
 
       <HeaderSection />
+      <ChatBotSection />
       <SkillsSection />
       <ProjectSection />
       <InternshipSection />
