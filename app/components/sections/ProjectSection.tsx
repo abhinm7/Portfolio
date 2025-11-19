@@ -97,7 +97,7 @@ function ProjectCard({ p }: { p: (typeof projects)[0] }) {
 
 export default function ProjectSection() {
   return (
-    <section className="py-20 border-t border-slate-200/60 text-slate-900">
+    <section className="py-20 border-t backdrop-blur-sm border-slate-200/60 text-slate-900">
       <div className="section-container">
         <Reveal>
           <h2 className="text-3xl font-bold mb-12 text-center tracking-tight">
