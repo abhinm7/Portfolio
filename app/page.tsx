@@ -1,16 +1,21 @@
 import HeaderSection from "./components/HeaderSection";
+
 import ProjectSection from "./components/ProjectSection";
 import InternshipSection from "./components/InternshipSection";
-import CertificateSection from "./components/CertificateSection";
+
 import ContactSection from "./components/ContactSection";
+import SkillsSection from "./components/SkillsSection";
+import EducationSection from "./components/EducationSection";
 
 export default function Home() {
   return (
-    <main className="w-full overflow-hidden">
+    <main className="w-full">
+
       <HeaderSection />
+      <SkillsSection />
       <ProjectSection />
       <InternshipSection />
-      <CertificateSection />
+      <EducationSection />
       <ContactSection />
     </main>
   );

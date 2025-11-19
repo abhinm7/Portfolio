@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./global.css";
+import TechBackground from "./components/TechBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,8 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-black text-white">
-        {children}
+      <body className="min-h-screen relative bg-white text-slate-900">
+        <TechBackground />
+        <div>{children}</div>
       </body>
     </html>
   );

@@ -1,39 +1,26 @@
 "use client";
 
 import { motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef, useEffect } from "react";
 
-export default function Reveal({
-  children,
-  width = "100%",
-}: {
-  children: React.ReactNode;
-  width?: string;
-}) {
+export default function Reveal({ children }: { children: React.ReactNode }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const controls = useAnimation();
+  const inView = useInView(ref, { once: true, margin: "-40px" });
 
   useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
-  }, [isInView, controls]);
+    if (inView) controls.start("visible");
+  }, [inView, controls]);
 
   return (
-    <div ref={ref} style={{ width, overflow: "hidden" }}>
+    <div ref={ref}>
       <motion.div
-        variants={{
-          hidden: { opacity: 0, y: 40, scale: 0.98 },
-          visible: {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            transition: { duration: 0.6, ease: "easeOut" },
-          },
-        }}
         initial="hidden"
         animate={controls}
+        variants={{
+          hidden: { opacity: 0, y: 16 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+        }}
       >
         {children}
       </motion.div>
