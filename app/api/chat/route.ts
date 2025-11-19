@@ -1,46 +1,25 @@
 import { NextResponse } from "next/server";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import { PROMPT } from "./prompt";
+
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
 export async function POST(req: Request) {
   try {
     const { message } = await req.json();
 
-    const prompt = `
-    You are "Abhin's Mini Assistant".
-    You ONLY answer questions about Abhin M.
-    Be short, friendly, and accurate.
+    // Combine system prompt + user input
+    const prompt = `${PROMPT}\n\nUser question: ${message}`;
 
-    Abhin's Info:
-    - Full Stack Developer (React, Next.js, Node.js, MongoDB)
-    - Built Microservices Social Media App (GKE, Docker, RabbitMQ)
-    - Built Event Registration System: 1000+ users
-    - Built AI PDF Summarizer (Next.js + Gemini)
-    - Internships: Rooman (Cloud MERN), Skolar (RBAC system)
-    - Loves Three.js, animations, clean UI
-
-    User question: ${message}
-    `;
-
-    const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=" +
-        process.env.GEMINI_API_KEY,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-        }),
-      }
-    );
-
-    const data = await response.json();
-    const text =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "Sorry, I couldn’t generate a response.";
+    const result = await model.generateContent(prompt);
+    const text = result.response.text() || "Sorry, I couldn't generate a response.";
 
     return NextResponse.json({ text });
-  } catch (err) {
+  } catch (error) {
+    console.error("GEMINI ERROR:", error);
     return NextResponse.json(
-      { error: "Something went wrong" },
+      { error: "Something went wrong with Gemini." },
       { status: 500 }
     );
   }
