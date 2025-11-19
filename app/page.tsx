@@ -1,11 +1,10 @@
-import HeaderSection from "./components/HeaderSection";
+import ContactSection from "./components/sections/ContactSection";
+import EducationSection from "./components/sections/EducationSection";
+import HeaderSection from "./components/sections/HeaderSection";
+import InternshipSection from "./components/sections/InternshipSection";
+import ProjectSection from "./components/sections/ProjectSection";
+import SkillsSection from "./components/sections/SkillsSection";
 
-import ProjectSection from "./components/ProjectSection";
-import InternshipSection from "./components/InternshipSection";
-
-import ContactSection from "./components/ContactSection";
-import SkillsSection from "./components/SkillsSection";
-import EducationSection from "./components/EducationSection";
 
 export default function Home() {
   return (

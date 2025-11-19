@@ -1,4 +1,4 @@
-import Reveal from "./Reveal";
+import Reveal from "../ui/Reveal";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
 
 export default function ContactSection() {

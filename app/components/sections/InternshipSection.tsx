@@ -1,4 +1,4 @@
-import Reveal from "./Reveal";
+import Reveal from "../ui/Reveal";
 
 export default function InternshipSection() {
   const internships = [
