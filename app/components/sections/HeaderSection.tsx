@@ -22,12 +22,12 @@ export default function HeaderSection() {
             <div className="section-container text-center py-20">
 
                 <h1
-                    className={`font-extrabold text-slate-900 ${short ? "text-4xl" : "text-6xl"} leading-tight`}
+                    className={`font-bold text-slate-900 ${short ? "text-4xl" : "text-6xl"} leading-tight`}
                 >
                     ABHIN M
                 </h1>
 
-                <p className="mt-4 text-lg text-slate-700">Full Stack Developer</p>
+                <p className="mt-4 text-lg text-slate-700">FULL STACK DEVELOPER</p>
 
                 <div className="mt-6 flex flex-wrap gap-3 justify-center">
                     {[

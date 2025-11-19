@@ -9,7 +9,7 @@ const projects = [
       "Implemented RabbitMQ event-driven architecture for reliable, asynchronous communication.",
       "Leveraged Google Cloud Build CI/CD, achieving a 90% reduction in deployment time.",
     ],
-    url: "#",
+    url: "https://bloomsocial.vercel.app/",
   },
   {
     title: "Sambhram Fest — High-Performance Event Registration System",
@@ -19,7 +19,7 @@ const projects = [
       "Implemented secure JWT authentication and a QR code ticketing system.",
       "Designed a real-time admin dashboard for analytics and event monitoring.",
     ],
-    url: "#",
+    url: "https://frontend-r35m.onrender.com/",
   },
   {
     title: "Intelligent Email Aggregator & Alert System",
@@ -29,7 +29,7 @@ const projects = [
       "Built a real-time alert pipeline with Slack and a configurable webhook.",
       "Automated workflows reducing manual processing time significantly.",
     ],
-    url: "#",
+    url: "https://github.com/abhinm7/Onebox-Email-Aggregator.git",
   },
   {
     title: "Sommaire — AI PDF Summarizer",
@@ -39,7 +39,7 @@ const projects = [
       "Implemented code-splitting resulting in a 15% faster initial load.",
       "Secured API communication and managed session state efficiently.",
     ],
-    url: "#",
+    url: "https://sommaire-ai-pdf-summary.vercel.app/",
   },
 ];
 
@@ -51,6 +51,7 @@ function ProjectCard({ p }: { p: (typeof projects)[0] }) {
         bg-white/10
         backdrop-blur-xs
         border border-white/20
+        hover:border-blue-300/40
         shadow-[0_0_20px_rgba(0,0,0,0.03)]
         hover:shadow-[0_0_35px_rgba(0,0,0,0.06)]
         hover:bg-white/15
@@ -67,7 +68,7 @@ function ProjectCard({ p }: { p: (typeof projects)[0] }) {
           {p.lines.map((l, i) => (
             <div key={i}>
               <p>{l}</p>
-              <div className="h-px bg-slate-300/30 mt-1"></div> {/* thin line */}
+              <div className="h-px bg-slate-300/30 mt-1"></div>
             </div>
           ))}
         </div>
@@ -92,6 +93,7 @@ function ProjectCard({ p }: { p: (typeof projects)[0] }) {
     </div>
   );
 }
+
 
 export default function ProjectSection() {
   return (
