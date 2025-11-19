@@ -42,6 +42,11 @@ I am currently **open to work** and excited to solve real-world engineering prob
 - **DevOps / Cloud:** Docker, Kubernetes (GKE), RabbitMQ, Vercel, Cloud Run  
 
 ---
+## 🎓 Education  
+- **Bachelor of Engineering – Computer Science (VTU)**  
+  - Shree Devi Institute of Technology, Mangalore  
+  - **CGPA: 7.3**  
+----
 
 ## 💡 Personal Strengths (Important in skill-related questions)
 - I have strong **problem-solving ability** and enjoy breaking down complex issues.  
