@@ -1,31 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Download } from "lucide-react";
 
 export default function HeaderSection() {
-    const [short, setShort] = useState(false);
-
-    useEffect(() => {
-        // Sets 'short' to true if the window width is less than 640px (Tailwind 'sm' breakpoint)
-        const onResize = () => setShort(window.innerWidth < 640);
-
-        onResize(); // Initial check
-        window.addEventListener("resize", onResize);
-
-        // Cleanup function to remove event listener
-        return () => window.removeEventListener("resize", onResize);
-    }, []);
 
     return (
         <header className="min-h-screen flex flex-col items-center justify-center">
             <div className="section-container text-center py-20">
 
-                <h1
-                    className={`font-bold text-slate-900 ${short ? "text-4xl" : "text-6xl"} leading-tight`}
-                >
+                <h1 className="font-bold text-slate-900 text-4xl sm:text-6xl leading-tight">
                     ABHIN M
                 </h1>
+
 
                 <p className="mt-4 text-lg text-slate-700">FULL STACK DEVELOPER</p>
 
