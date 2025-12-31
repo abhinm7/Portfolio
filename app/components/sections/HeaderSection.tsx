@@ -8,8 +8,8 @@ export default function HeaderSection() {
         <header className="min-h-screen flex flex-col items-center justify-center">
             <div className="section-container text-center py-20">
 
-                <h1 className="font-bold text-slate-900 text-4xl sm:text-6xl leading-tight">
-                    ABHIN M
+                <h1 className="text-slate-900 text-4xl sm:text-6xl leading-tight">
+                    Hi, I am Abhin
                 </h1>
 
 

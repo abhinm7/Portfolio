@@ -28,12 +28,12 @@ export default function TechParticleSphere() {
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
 
     // Zoom clamp (these control how small/large the sphere can appear)
-    const minCameraZ = 4;   // closest (largest sphere)
-    const maxCameraZ = 7;   // farthest (smallest sphere)
+    const minCameraZ = 1;   // closest (largest sphere)
+    const maxCameraZ = 5;   // farthest (smallest sphere)
 
     // Entrance settings
     let entranceProgress = 0;
-    const entranceSpeed = 0.015;
+    const entranceSpeed = 0.01;
     camera.position.z = 7; // start far (small) for entrance (you can tweak)
 
     // Adaptive particle count for perf (mobile => fewer)
@@ -110,9 +110,10 @@ export default function TechParticleSphere() {
       transparent: true,
       opacity: 0.10,
     });
+    
     const ring = new THREE.Mesh(ringGeo, ringMat);
     ring.rotation.x = Math.PI / 4;
-    scene.add(ring);
+    // scene.add(ring);
 
     // SCROLL
     let scrollY = 0;

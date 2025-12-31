@@ -7,7 +7,7 @@ export default function EducationSection() {
       degree: "Bachelor of Engineering — Computer Science and Engineering",
       university: "Visvesvaraya Technological University",
       cgpa: "7.3 CGPA",
-      range: "2020 — 2024",
+      range: "2021 — 2025",
     },
   ];
 
